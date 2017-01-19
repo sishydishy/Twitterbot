@@ -11,7 +11,7 @@ var T = new Twit(config);
 
 var p = { q: 'nba',
           count: 2
-};                                                  //api query to trigger the GET request
+    };                                                  //api query to trigger the GET request
 
 T.get('search/tweets', p , datafunc);               //GET request
 
