@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/sishydishy/Twitterbot/issues"
   },
-  "homepage": "https://github.com/sishydishy/Twitterbot#readme"
+  "homepage": "https://github.com/sishydishy/Twitterbot#readme",
+  "dependencies": {
+    "twit": "^2.2.5"
+  }
 }
