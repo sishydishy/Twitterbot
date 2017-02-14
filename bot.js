@@ -26,7 +26,7 @@ function tweetEvent(event) {
     var from = event.user.screen_name;
 
     if (reply === 'sishydishybot'){
-        var newtweet = '@' + from + " Thank You for the follow";
+        var newtweet = '@' + from + " sup ";
         tweetIt(newtweet);
     }
 }
