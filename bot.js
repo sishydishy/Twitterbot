@@ -26,7 +26,7 @@ function tweetEvent(event) {
     var from = event.user.screen_name;
 
     if (reply === 'sishydishybot'){
-        var newtweet = '@' + from + " hello ";
+        var newtweet = '@' + from + " time to smash this bad boy ";
         tweetIt(newtweet);
     }
 }
