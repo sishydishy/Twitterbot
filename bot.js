@@ -11,12 +11,24 @@ var T = new Twit(config);
 
 var stream = T.stream('user');                  //set up a user stream
 
-stream.on('follow', followed);                  //Call back to when someone follows
+stream.on('tweet', tweetEvent);                  //Call back to when someone follows
 
-function followed(event) {
-    var name = event.source.name;
+function tweetEvent(event) {
+/*    var fs = require('fs');
+    var json = JSON.stringify(event,null,2);
+    fs.writeFile("tweet.json",json);*/
+    /*var name = event.source.name;
     var screenName = event.source.screen_name;
-    tweetIt('@' + screenName + " Thank You for the follow");
+    tweetIt('@' + screenName + " Thank You for the follow");*/
+
+    var reply = event.in_reply_to_screen_name;
+    var text = event.text;
+    var from = event.user.screen_name;
+
+    if (reply === 'sishydishybot'){
+        var newtweet = '@' + from + " Thank You for the follow";
+        tweetIt(newtweet);
+    }
 }
 
 
