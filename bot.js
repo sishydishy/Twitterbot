@@ -26,7 +26,7 @@ function tweetEvent(event) {
     var from = event.user.screen_name;
 
     if (reply === 'sishydishybot'){
-        var newtweet = '@' + from + " ni hao ";
+        var newtweet = '@' + from + " hello ";
         tweetIt(newtweet);
     }
 }
