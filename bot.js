@@ -9,12 +9,53 @@ var config = require("./config");
 
 var T = new Twit(config);
 
-var p = { q: 'nba',
+var stream = T.stream('user');                  //set up a user stream
+
+stream.on('follow', followed);                  //Call back to when someone follows
+
+function followed(event) {
+    var name = event.source.name;
+    var screenName = event.source.screen_name;
+    tweetIt('@' + screenName + " Thank You for the follow");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*var p = { q: 'nba',
           count: 2
     };                                                  //api query to trigger the GET request
 
 T.get('search/tweets', p , datafunc);               //GET request
 
-function datafunc(err, data, response) {
+    function datafunc(err, data, response) {
         console.log(data);
-    }                                               //callback function
+    }      */                                         //callback function
+
+function tweetIt(txt) {
+    var tweet = {
+        status: txt                                    //defining the var tweet
+    }
+    T.post('statuses/update', tweet, tweeted);
+    function tweeted(err, data, response) {
+        if (err) {
+            console.log("Something went wrong!");
+        }
+        else {
+            console.log("works");
+        }
+    }
+}
