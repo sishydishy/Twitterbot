@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/sishydishy/Twitterbot#readme",
   "dependencies": {
+    "express": "^4.14.1",
     "twit": "^2.2.5"
   }
 }
